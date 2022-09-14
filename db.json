@@ -1,0 +1,54 @@
+{
+  "income": [
+    {
+      "date": "Aug-2020",
+      "description": "test description 2",
+      "amount": "400.30",
+      "id": 1659636634168
+    },
+    {
+      "date": "Apr-2021",
+      "description": "New-income",
+      "amount": "120",
+      "id": 1659654842466
+    },
+    {
+      "date": "Jun-2022",
+      "description": "JuneIncome",
+      "amount": "3200",
+      "id": 1661098161320
+    },
+    {
+      "date": "May-2022",
+      "description": "new payroll",
+      "amount": "3000.00",
+      "id": 1662506939552
+    },
+    {
+      "date": "Aug-2021",
+      "description": "Payroll August 2021",
+      "amount": "500",
+      "id": 1662957454886
+    }
+  ],
+  "expense": [
+    {
+      "date": "Mar-2022",
+      "description": "italian-trip-on-march",
+      "amount": "1500",
+      "id": "fdskjh3io432432131231"
+    },
+    {
+      "date": "Jun-2021",
+      "description": "Helena baby clothes",
+      "amount": "2000",
+      "id": 1662926675064
+    },
+    {
+      "date": "Apr-2021",
+      "description": "Baby clothes",
+      "amount": "1400",
+      "id": 1662957313534
+    }
+  ]
+}

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="graphstyle.css">
+    <script src="graphscript.js"></script>
+
+
+    <script src="https://kit.fontawesome.com/ff8a2f59be.js" crossorigin="anonymous" />
+    </script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container_fluid">
+        <div class="row row-cols-lg-2">
+            <nav class="left-nav col-lg-2">
+                <div class="navb">
+                    <div class="logo">
+                        <img src="/img/logo.png" alt="">
+                        <span>LOGO</span>
+                    </div>
+
+                    <ul>
+                        <li><a href="#"><i class="fa-solid fa-gauge"></i>Dashboard</a></li>
+                        <li><a href="#"><i class="fa fa-user"></i>Income</a></li>
+                        <li><a href="#"><i class="fa-solid fa-chart-pie"></i>Expenses</a></li>
+                        <hr>
+                        <li><a href="#"><i class="fa-solid fa-gear"></i>Setting</a></li>
+                    </ul>
+                    <section>
+                        <div>
+                            <div class="p1">PDF Report</div>
+                            <div class="p2">Download monthly report</div>
+                            <button type="button" class="button">
+                                <span class="btn1">Download <i class="fa-solid fa-download"></i></span>
+                            </button>
+                        </div>
+                    </section>
+            </nav>
+            <div class="main col-lg-10">
+                <!-- <div class="top-menu">
+                <div class="dash">Dashboard</div>
+                <div class="icons">
+                    <img src="/img/searchico.jpeg" alt="">
+                    <img src="/img/notificico.jpeg" alt="">
+                    <img src="/img/bar.jpeg" alt="">
+                    Regan Rodriguez
+                    <img class="pic4" src="/img/profileico.jpeg" alt="">
+                </div>
+            </div> -->
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="#">Dashboard</a>
+
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                            </ul>
+                            <form class="d-flex">
+                                <div class="top-menu">
+
+                                    <div class="icons">
+                                        <img class="imgs" src="/img/searchico.jpeg" alt="">
+                                        <img class="imgs" src="/img/notificico.jpeg" alt="">
+                                        <img class="imgs" src="/img/bar.jpeg" alt="">
+                                        <p> Regan Rodriguez</p>
+                                        <div class="pro_div">
+                                            <img class="pic4" src="/img/profileico.jpeg" alt="">
+                                        </div>
+                                    </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </nav>
+
+
+                <div class="chartCard">
+
+                    <div class="chartBox">
+                        <div class="graph_func"><b>Monthly Report</b>
+                            <select class="form-select" aria-label="Default select example">
+                                <option selected>August</option>
+                                <option value="1">January</option>
+                                <option value="2">February</option>
+                                <option value="3">March</option>
+                            </select>
+                        </div>
+                        <div class="radio_inputs">
+                            <input type="radio" id="html" name="fav_language" value="HTML">
+                            <label for="html">Income</label><input type="radio" id="html" name="fav_language"
+                                value="HTML">
+                            <label for="html">Expenses</label>
+                        </div>
+
+                        <canvas id="myChart"></canvas>
+                    </div>
+                </div>
+                <style>
+                    .chartMenu {
+                        width: 100vw;
+                        height: 40px;
+                        background: #1A1A1A;
+                        color: rgba(255, 26, 104, 1);
+
+                    }
+
+                    .chartMenu p {
+                        padding: 10px;
+                        font-size: 20px;
+                    }
+
+                    .chartCard {
+                        /* width: 100vw; */
+                        margin-top: 5px;
+                        margin-bottom: 100px;
+                        /* height: calc(100vh - 5px); */
+                        /* background: rgba(255, 26, 104, 0.2); */
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+
+                    .chartBox {
+                        width: 95%;
+                        padding: 20px;
+                        border-radius: 9px;
+                        border: solid 1px rgb(209, 209, 209);
+                        background: white;
+                    }
+                </style>
+                <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                <script>
+                    const salesNumbers = [
+                        { day: "Sun-01", sales: { food: 0, drinks: 0 } },
+                        { day: "Mon-02", sales: { food: 300, drinks: 200 } },
+                        { day: "Tue-03", sales: { food: 300, drinks: 250 } },
+                        { day: "Wed-04", sales: { food: 500, drinks: 250 } },
+                        { day: "Thu-05", sales: { food: 500, drinks: 600 } },
+                        { day: "Fri-06", sales: { food: 500, drinks: 600 } },
+                        { day: "Sat-07", sales: { food: 1100, drinks: 700 } },
+                        { day: "Sun-08", sales: { food: 1100, drinks: 700 } },
+                        { day: "Mon-09", sales: { food: 800, drinks: 300 } },
+                        { day: "Tue-10", sales: { food: 800, drinks: 300 } },
+                        { day: "Wed-11", sales: { food: 600, drinks: 500 } },
+                        { day: "Thu-12", sales: { food: 600, drinks: 500 } },
+                        { day: "Fri-13", sales: { food: 700, drinks: 200 } },
+                        { day: "Sat-14", sales: { food: 700, drinks: 200 } },
+                    ];
+                    // 'rgba(255, 26, 104, 0.2)',
+                    //   'rgba(54, 162, 235, 0.2)',
+                    //   'rgba(75, 192, 192, 0.2)',
+                    // setup
+                    const data = {
+                        // labels: ['Sun-01', 'Mon-05', 'Fri-10', 'Wed-15', 'Sun-20', 'Thu-25',],
+
+                        datasets: [
+                            {
+                                label: "",
+                                // data: [18, 12, 6, 9, 12, 3, 9],
+                                data: salesNumbers,
+                                backgroundColor: "rgba(255, 26, 104, 0.2)",
+                                borderColor: "rgba(194, 114, 239, 1)",
+                                tension: 0.25,
+
+                                parsing: {
+                                    // xAxisKey: 'day',
+                                    yAxisKey: "sales.food",
+                                },
+                            },
+                            {
+                                label: "",
+                                // data: [18, 12, 6, 9, 12, 3, 9],
+                                data: salesNumbers,
+                                backgroundColor: "rgba(40, 12, 2, 0.2)",
+                                borderColor: "rgba(2, 99, 242, 1)",
+                                tension: 0.25,
+                                parsing: {
+                                    // xAxisKey: 'day',
+                                    yAxisKey: "sales.drinks",
+                                },
+                                // }, {
+                                //     label: 'Cake Sales',
+                                //     // data: [18, 12, 6, 9, 12, 3, 9],
+                                //     data: salesNumbers,
+                                //     backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                                //     borderColor: 'rgba(75, 192, 192, 1)',
+                                //     tension: 0.4,
+                                //     parsing: {
+                                //         // xAxisKey: 'day',
+                                //         yAxisKey: 'sales.cakes'
+                                //     }
+                                //
+                            },
+                        ],
+                    };
+
+                    // config
+                    const config = {
+                        type: "line",
+                        data,
+                        options: {
+                            parsing: {
+                                xAxisKey: "day",
+                            },
+                            scales: {
+                                y: {
+                                    beginAtZero: true,
+                                },
+                            },
+                        },
+                    };
+
+                    // render init block
+                    const myChart = new Chart(document.getElementById("myChart"), config);
+
+                </script>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+    integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+    integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+    crossorigin="anonymous"></script>
+
+</html>
