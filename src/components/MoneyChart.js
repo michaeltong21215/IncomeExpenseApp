@@ -24,10 +24,12 @@ const MoneyChart = () => {
   const [isLoading, setIsloading] = useState(false);
   const [selectedYear, setSelectedYear] = useState('2022');
   const getData = async () => {
-    const res = await fetch('http://localhost:8000/income');
+    const res = await fetch('https://mtongbudgettrack.herokuapp.com/income');
     const incomedata = await res.json();
 
-    const expenseRes = await fetch('http://localhost:8000/expense');
+    const expenseRes = await fetch(
+      'https://mtongbudgettrack.herokuapp.com/expense'
+    );
     const expensedata = await expenseRes.json();
 
     incomedata.sort((a, b) => new Date(b.date) - new Date(a.date));

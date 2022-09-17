@@ -37,7 +37,7 @@ const Expense = () => {
     let mounted = true;
     setIsloading(true);
     const getData = async () => {
-      const res = await fetch('http://localhost:8000/expense');
+      const res = await fetch('https://mtongbudgettrack.herokuapp.com/expense');
       const data = await res.json();
       data.sort((a, b) => new Date(a.date) - new Date(b.date));
       setExpenseData(data);

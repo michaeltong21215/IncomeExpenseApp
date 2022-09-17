@@ -51,8 +51,8 @@ const AddIncomeExpense = () => {
       const month = MONTHS[monthYear.month - 1];
       const date = `${month}-${year}`;
       const url = paramAmt
-        ? `http://localhost:8000/${type}/${id}`
-        : `http://localhost:8000/${type}`;
+        ? `https://mtongbudgettrack.herokuapp.com/${type}/${id}`
+        : `https://mtongbudgettrack.herokuapp.com/${type}`;
 
       let body = {
         date,

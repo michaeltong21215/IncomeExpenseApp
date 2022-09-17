@@ -82,7 +82,7 @@ const renderHeader = (headers) => {
 const renderRows = (data, navigate, type, getData, setIsLoading) => {
   const deleteItem = async (id) => {
     setIsLoading(true);
-    await fetch(`http://localhost:8000/${type}/${id}`, {
+    await fetch(`https://mtongbudgettrack.herokuapp.com/${type}/${id}`, {
       method: 'DELETE',
     });
 

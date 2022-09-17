@@ -32,7 +32,7 @@ const Income = () => {
   const [isLoading, setIsloading] = useState(false);
   const navigate = useNavigate();
   const getData = async () => {
-    const res = await fetch('http://localhost:8000/income');
+    const res = await fetch('https://mtongbudgettrack.herokuapp.com/income');
     const data = await res.json();
     data.sort((a, b) => new Date(a.date) - new Date(b.date));
     setIncomeData(data);
