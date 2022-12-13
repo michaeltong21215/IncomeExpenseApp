@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { useState } from 'react';
-//import ReactMonthPicker from 'react-month-picker';
-//import { MONTHS } from '../utils/constants';
+import ReactMonthPicker from 'react-month-picker';
+import { MONTHS } from '../utils/constants';
 import 'react-month-picker/css/month-picker.css';
 
 const DateButton = styled.button`
@@ -43,14 +43,14 @@ const Datepicker = ({ monthYear, setMonthYear }) => {
     <div className='MonthYearPicker'>
       <DateButton onClick={showMonthPicker}>{getMonthValue()}</DateButton>
 
-      {/* <ReactMonthPicker
+      <ReactMonthPicker
         show={isVisible}
         lang={MONTHS}
         years={range}
         value={monthYear?.year ? monthYear : { year: new Date().getFullYear() }}
         onChange={handleOnChange}
         onDismiss={handleOnDismiss}
-      /> */}
+      />
     </div>
   );
 };
